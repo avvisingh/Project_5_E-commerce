@@ -8,7 +8,7 @@ import firestore from "./firebase";
 export const initProducts = [
     {
         title: "Gaming PC",
-        price: "2,500",
+        price: "2500",
         imageURL:
             "https://cdn1.dotesports.com/wp-content/uploads/2021/07/08151715/Skytech.png",
         quantity: 25,
@@ -98,6 +98,7 @@ export const initProducts = [
 
 export const dataInit = (collectionName) => {
     initProducts.forEach((object) => {
-        firestore.collection(collectionName).add(object);
+        firestore.collection(collectionName).doc(object.title).set(object);
+        console.log("Successfully adding to db");
     });
 };
