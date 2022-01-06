@@ -4,7 +4,6 @@ import ProductsGrid from "./Containers";
 
 function App() {
     dataInit("products");
-    readAll();
     return (
         <div className="App">
             <h1>Avvi's Gaming Setup Store</h1>
