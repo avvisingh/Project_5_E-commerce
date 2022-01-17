@@ -1,6 +1,8 @@
 import ProductCard from "../Components";
 import { readAll } from "../services/firebase-utils";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./ProductsGrid.module.scss";
 
 const ProductsGrid = () => {
     let [productsToRender, setProductsToRender] = useState([]);
@@ -16,15 +18,14 @@ const ProductsGrid = () => {
     );
 
     let renderList = productsToRender.map((product) => {
-        return <ProductCard data={product} />;
+        return (
+            <Link to={product.title}>
+                <ProductCard data={product} />
+            </Link>
+        );
     });
 
-    return (
-        <div>
-            <h1>Products will display here</h1>
-            <div>{renderList}</div>
-        </div>
-    );
+    return <div className={styles["container"]}>{renderList}</div>;
 };
 
 export default ProductsGrid;

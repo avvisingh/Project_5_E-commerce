@@ -1,0 +1,14 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 15px 25px;
+    text-align: center;
+}
+
+.card-image {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+}
